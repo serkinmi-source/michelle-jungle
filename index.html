@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Michelle's Jungle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero area with the jungle background image. -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Michelle's Jungle</h1>
+            <p class="subtitle">Click an animal or press its key to hear its sound.</p>
+            <p class="instruction">Turn on the volume and explore the jungle.</p>
+            <button id="musicButton" class="music-button" type="button">Play Jungle Music</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Animal cards use data attributes so JavaScript can find each key and sound. -->
+        <section class="animal-section" aria-label="Interactive jungle animals">
+            <article class="animal-card" data-animal="Lion" data-key="L" data-sound="sounds/lion.mp3" tabindex="0">
+                <span class="animal-key">L</span>
+                <img src="images/lion.jpg" alt="Lion">
+                <h2>Lion</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Elephant" data-key="E" data-sound="sounds/elephant.mp3" tabindex="0">
+                <span class="animal-key">E</span>
+                <img src="images/elephant.jpg" alt="Elephant">
+                <h2>Elephant</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Monkey" data-key="M" data-sound="sounds/monkey.mp3" tabindex="0">
+                <span class="animal-key">M</span>
+                <img src="images/monkey.jpg" alt="Monkey">
+                <h2>Monkey</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Snake" data-key="S" data-sound="sounds/snake.mp3" tabindex="0">
+                <span class="animal-key">S</span>
+                <img src="images/snake.jpg" alt="Snake">
+                <h2>Snake</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Frog" data-key="F" data-sound="sounds/frog.mp3" tabindex="0">
+                <span class="animal-key">F</span>
+                <img src="images/frog.jpg" alt="Frog">
+                <h2>Frog</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Tiger" data-key="T" data-sound="sounds/tiger.mp3" tabindex="0">
+                <span class="animal-key">T</span>
+                <img src="images/tiger.jpg" alt="Tiger">
+                <h2>Tiger</h2>
+            </article>
+
+            <article class="animal-card" data-animal="Parrot" data-key="P" data-sound="sounds/parrot.mp3" tabindex="0">
+                <span class="animal-key">P</span>
+                <img src="images/parrot.jpg" alt="Parrot">
+                <h2>Parrot</h2>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Michelle Serkin</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

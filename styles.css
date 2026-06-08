@@ -1,0 +1,188 @@
+/* Basic page setup and jungle colors. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2d2112;
+    background-color: #173d1f;
+    background-image: linear-gradient(rgba(14, 34, 18, 0.55), rgba(45, 33, 18, 0.65)), url("images/background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Hero section sits on top of the full-page jungle background. */
+.hero {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff8dc;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+h1 {
+    margin: 0 0 14px;
+    font-size: 48px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.instruction {
+    margin: 0 0 24px;
+    font-size: 18px;
+}
+
+.music-button {
+    padding: 12px 22px;
+    border: 2px solid #ffdc7a;
+    border-radius: 6px;
+    color: #2d2112;
+    background-color: #ffcc4d;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #7a4c1f;
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.music-button:hover {
+    background-color: #ffe08a;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #7a4c1f;
+}
+
+/* Animal card grid. */
+.animal-section {
+    width: min(1400px, 96%);
+    margin: 34px auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 14px;
+}
+
+.animal-card {
+    padding: 16px;
+    border: 3px solid #6d4b26;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff8dc;
+    box-shadow: 0 8px 18px rgba(45, 33, 18, 0.18);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.animal-card:hover,
+.animal-card:focus {
+    outline: none;
+    border-color: #2f6b2f;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(45, 33, 18, 0.25);
+}
+
+.animal-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    color: #fff8dc;
+    background-color: #2f6b2f;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 140px;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.animal-card h2 {
+    margin: 14px 0 0;
+    color: #3f5f24;
+    font-size: 24px;
+}
+
+/* This class is added by JavaScript when an animal is activated. */
+.animal-card.active {
+    animation: animalJump 0.45s ease;
+    border-color: #ffcc4d;
+}
+
+@keyframes animalJump {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    45% {
+        transform: translateY(-18px) scale(1.04);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+footer {
+    padding: 22px;
+    text-align: center;
+    color: #fff8dc;
+    background-color: rgba(45, 33, 18, 0.88);
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Smaller screens show fewer cards per row. */
+@media (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    .animal-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        min-height: 340px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .animal-section {
+        grid-template-columns: 1fr;
+    }
+}
